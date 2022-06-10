@@ -1,4 +1,4 @@
-name: dmg angular pwa deploy
+name: dmg ng pwa deploy
 
 on:
   push:
@@ -23,8 +23,8 @@ jobs:
       - name: Archive Artifact
         uses: actions/upload-artifact@master
         with:
-          name: dmg-angular-pwa #zip file name
-          path: dist/angular-pwa #ziplenecek folder
+          name: dmg-ng-pwa #zip file name
+          path: dist/ng-pwa #ziplenecek folder
 
   deploy:
     name: Deploy
@@ -37,12 +37,12 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@master
         with:
-          name: dmg-angular-pwa #zip file name
+          name: dmg-ng-pwa #zip file name
           path: dist/angular-pwa #çıkarılacak path
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
-          args: deploy --only hosting:dmg-angular-pwa-deploy
+          args: deploy --only hosting:dmg-ng-pwa-deploy
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-          PROJECT_ID: "dmg-angular-pwa"
+          PROJECT_ID: "dmg-ng-pwa"

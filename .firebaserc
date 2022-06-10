@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "dmg-ng-pwa"
+  },
+  "targets": {
+    "dmg-ng-pwa": {
+      "hosting": {
+        "dmg-ng-pwa-deploy": [
+          "dmg-ng-pwa"
+        ]
+      }
+    }
+  }
+}
