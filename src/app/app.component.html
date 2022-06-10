@@ -1,3 +1,20 @@
-<h1 class="text-3xl font-bold underline text-red-400 ">
-  Hello world!
-</h1>
+<div class="flex flex-col">
+  <header class="flex flex-row items-center justify-start bg-black">
+    <img [src]="'/assets/dmg-logo.jpg'"
+         class="w-16">
+    <h6 class="text-2xl font-semibold text-white">DeveloperMultiGroups</h6>
+  </header>
+  <main>
+    <ul class="px-16">
+      <li class="my-2 border-b"
+          *ngFor="let item of news$ | async">
+        <div class="flex flex-col gap-2">
+          <h1 class="text-lg"
+              [textContent]="item.header"></h1>
+          <pre [textContent]="item.description"
+               class="text-slate-600"></pre>
+        </div>
+      </li>
+    </ul>
+  </main>
+</div>
