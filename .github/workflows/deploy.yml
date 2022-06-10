@@ -24,7 +24,7 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: dmg-ng-pwa #zip file name
-          path: dist/ng-pwa #ziplenecek folder
+          path: dist/angular-pwa #ziplenecek folder
 
   deploy:
     name: Deploy
