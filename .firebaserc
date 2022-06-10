@@ -5,7 +5,7 @@
   "targets": {
     "dmg-ng-pwa": {
       "hosting": {
-        "dmg-ng-pwa-deploy": [
+        "angular-pwa": [
           "dmg-ng-pwa"
         ]
       }

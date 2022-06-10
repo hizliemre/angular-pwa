@@ -104,6 +104,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "angular-pwa:build:production",
+            "firebaseProject": "dmg-ng-pwa",
+            "firebaseHostingSite": "dmg-ng-pwa"
+          }
         }
       }
     }
