@@ -1,9 +1,9 @@
-name: goat admin test deploy
+name: dmg angular pwa deploy
 
 on:
   push:
     branches:
-      - main
+      - master
     paths: #hangi dosyalarda değişiklik olursa action çalışacak?
       - ".github/workflows/deploy.yml"
       - "src/**"
