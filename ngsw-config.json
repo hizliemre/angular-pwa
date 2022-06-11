@@ -26,5 +26,19 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "news",
+      "urls": [
+        "https://dmg-ng-pwa-default-rtdb.europe-west1.firebasedatabase.app/news.json"
+      ],
+      "cacheConfig": {
+        "maxAge": "6h",
+        "maxSize": 5,
+        "timeout": "10s",
+        "strategy": "freshness"
+      }
+    }
   ]
 }

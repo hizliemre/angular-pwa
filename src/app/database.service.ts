@@ -1,5 +1,5 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { Observable } from 'rxjs';
 
 export interface NewsModel {
@@ -12,10 +12,10 @@ export interface NewsModel {
 })
 export class DatabaseService {
 
-  news: Observable<NewsModel[]>
+  constructor(private readonly _http: HttpClient) { }
 
-  constructor(private readonly _db: AngularFireDatabase) {
-    this.news = _db.list<NewsModel>('news').valueChanges();
+  public getNews(): Observable<NewsModel[]> {
+    return this._http.get<NewsModel[]>('https://dmg-ng-pwa-default-rtdb.europe-west1.firebasedatabase.app/news.json');
   }
 
 }
