@@ -5,6 +5,7 @@ import { NotificationModel, NotificationService } from 'src/app/notification.ser
 @Component({
   selector: 'app-notification',
   templateUrl: './notification.component.html',
+  styleUrls: ['./notification.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class NotificationComponent implements OnInit {
@@ -12,7 +13,6 @@ export class NotificationComponent implements OnInit {
   showPanel: boolean;
   notification: NotificationModel | null;
   notificationSub: Subscription;
-  notificationTimeout: any;
 
   constructor(private notificationService: NotificationService) { }
 
@@ -22,10 +22,6 @@ export class NotificationComponent implements OnInit {
         console.log(n);
         this.notification = n;
         this.showPanel = n !== null;
-
-        this.notificationTimeout = setTimeout(() => {
-          this.showPanel = false;
-        }, 3000);
       });
   }
 
@@ -35,6 +31,5 @@ export class NotificationComponent implements OnInit {
 
   ngOnDestroy() {
     this.notificationSub.unsubscribe();
-    clearTimeout(this.notificationTimeout);
   }
 }
